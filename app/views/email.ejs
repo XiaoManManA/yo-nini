@@ -1,0 +1,82 @@
+<% include layout %>
+
+<section class="tile">
+
+<section class="tile">
+  <!-- tile header -->
+  <div class="tile-header">
+    <h1><strong>邮箱</strong> 列表</h1>
+    <div class="controls">
+      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <!-- /tile header -->
+  <!-- tile body -->
+  <div class="tile-body">
+    <a href="#modalDialog" role="button" class="btn btn-cyan" data-toggle="modal">
+    <i class="fa  fa-plus"></i> 添加邮箱</a>
+  </div>
+
+  <!-- tile body -->
+  <div class="tile-body">
+    <table class="table" id="mail_table">
+      <thead>
+      <tr>
+          <th>邮箱账户</th>
+          <th>创建时间</th>
+          <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr id="1">
+          <td>Mark</td>
+          <td>2015-01-06</td>
+          <td>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+        <tr id="2">
+          <td>Jacob</td>
+          <td>2015-01-06</td>
+          <td>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+        <tr id="3">
+          <td>Larry</td>
+          <td>2015-01-06</td>
+          <td>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /tile body -->
+</section>
+
+<script language="javascript">
+    $("#email").addClass("active").siblings("li").removeClass("active") 
+
+    var id=0;
+    $('#mail_table').delegate('tr', 'click', function(){
+    if($(this).attr("id")!=null){
+       $(this).addClass("success").siblings("tr").removeClass("success");
+       id=$(this).attr("id");
+    }
+    });
+
+    function edit(){
+      alert("就是不让你编辑,咬我啊")
+    }
+
+    function del(){
+      alert("deleted")
+      var r=confirm("确定要删除此作品吗?")
+      if(r){
+      alert("就是不让你删除,咬我啊")
+      }
+    }
+</script>
+<% include footer %>

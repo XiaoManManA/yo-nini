@@ -1,0 +1,89 @@
+<% include layout %>
+
+<section class="tile">
+  <!-- tile header -->
+  <div class="tile-header">
+    <h1><strong>作品</strong> 列表</h1>
+    <div class="controls">
+      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <!-- /tile header -->
+  <!-- tile body -->
+  <div class="tile-body">
+    <a href="#modalDialog" role="button" class="btn btn-cyan" data-toggle="modal">
+    <i class="fa  fa-plus"></i> 创建作品</a>
+  </div>
+
+  <!-- tile body -->
+  <div class="tile-body">
+    <table class="table table-hover" id="work_table">
+      <thead>
+      <tr>
+          <th>主题</th>
+          <th>附件</th>
+          <th>状态</th>
+          <th>创建时间</th>
+          <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr id="1">
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>已发送</td>
+          <td>2015-01-06</td>
+          <td><a onclick="view()"><i class="fa fa-search"></i>预览</a>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+        <tr id="2">
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>待发送</td>
+          <td>2015-01-06</td>
+          <td><a onclick="view()"><i class="fa fa-search"></i>预览</a>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+        <tr id="3">
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>发送中</td>
+          <td>2015-01-06</td>
+          <td><a onclick="view()"><i class="fa fa-search"></i>预览</a>
+          <a onclick="edit()"><i class="fa fa-edit"></i>编辑</a>
+          <a onclick="del()"><i class="fa fa-trash-o"></i>删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /tile body -->
+</section>
+
+<script language="javascript">
+    $("#work").addClass("active").siblings("li").removeClass("active") 
+
+    $('#work_table').delegate('tr', 'click', function(){
+    if($(this).attr("id")!=null){
+       $(this).addClass("success").siblings("tr").removeClass("success");
+       id=$(this).attr("id");
+    }
+    });
+
+    function edit(){
+      alert("就是不让你编辑,咬我啊")
+    }
+
+    function del(){
+      alert("deleted")
+      var r=confirm("确定要删除此作品吗?")
+      if(r){
+      alert("就是不让你删除,咬我啊")
+      }
+    }
+</script>
+
+
+<% include footer %>

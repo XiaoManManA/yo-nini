@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>注册</title>
+  <title><%- title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <!-- Bootstrap -->
@@ -31,7 +31,10 @@
             Stranger
           </h1>
           <h5>在线投稿平台 -注册</h5>
-          <span id="msg" style="color:#A52A2A">
+          <span style="color:#A52A2A">
+              <% if(message){ %>
+              <%- message %>
+              <% } %>
           </span>
           <form id="register" class="form-signin" role="form" method="post" enctype='multipart/form-data' action="/register">
             <section>

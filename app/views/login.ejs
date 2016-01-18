@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>登录</title>
+    <title><%- title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +29,12 @@
             <img src="assets/images/logo-big.png" alt class="logo">
             <h1><strong>Welcome</strong> Stranger</h1>
             <h5>在线投稿平台 -登录</h5>
-            <span id="erro" style="color:#A52A2A"></span>
+            <span id="erro" style="color:#A52A2A">
+              <% if(message){ %>
+              <%- message %>
+              <% } %>
+
+            </span>
             <form id="login" class="form-signin" action="/login" method="post">
               <section>
                 <div class="input-group">
