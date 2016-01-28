@@ -14,7 +14,7 @@ exports.login = function(req, res, next) {
             })
             return
         }
-        if (user.isVip == 1) {
+        if (user.isVip == 0) {
             res.render('login', {
                 title: '登录失败',
                 message: '抱歉,你的帐号还未激活.'
