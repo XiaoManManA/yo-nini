@@ -10,6 +10,7 @@
     "jquery": "~2.2.0",
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
-    "jquery-validation": "~1.14.0"
+    "jquery-validation": "~1.14.0",
+    "summernote": "~0.7.3"
   }
 }

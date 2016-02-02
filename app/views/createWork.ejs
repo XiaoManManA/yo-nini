@@ -1,0 +1,27 @@
+<% include layout %>
+
+<!-- include summernote css/js-->  
+<link href="/components/summernote/dist/summernote.css" /> 
+<script src="/components/summernote/dist/summernote.min.js"></script>
+
+
+<section class="tile">
+	<div class="title-header">
+		创建页面
+	</div>
+	<div class="title-body">
+	<form action="/createWork" method="post" class="form-horizontal" role="form">
+
+	<div class="form-group">
+	<label class="col-sm-4 control-label" for="title">主题:</label>
+	<div class="col-sm-8">
+	<input type="text" class="form-control" id="title">
+	</div>
+	</div>
+	
+
+	</form>
+	</div>
+</section>
+
+<% include footer %>

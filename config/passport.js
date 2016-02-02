@@ -46,7 +46,7 @@ exports.logout = function(req, res, next) {
 //将req.isAuthenticated()封装成中间件
 exports.isAuthenticated = function(req, res, next) {
     if (req.isAuthenticated()) return next();
-    res.redirect('/login', {
+    res.render('login', {
         title: '登录',
         message: null
     });
